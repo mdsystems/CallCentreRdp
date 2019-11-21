@@ -1,0 +1,134 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{FAB9AD63-5D94-4990-9B50-A2CE2FA7D511}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="CallManager.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestRdpServer.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestLibraryStatus.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestDLLFindWindow.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CallRouter.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="CallRouterTest.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="CallManager">
+        <MSBuild Projects="CallManager.dproj"/>
+    </Target>
+    <Target Name="CallManager:Clean">
+        <MSBuild Projects="CallManager.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CallManager:Make">
+        <MSBuild Projects="CallManager.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestRdpServer">
+        <MSBuild Projects="TestRdpServer.dproj"/>
+    </Target>
+    <Target Name="TestRdpServer:Clean">
+        <MSBuild Projects="TestRdpServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestRdpServer:Make">
+        <MSBuild Projects="TestRdpServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestLibraryStatus">
+        <MSBuild Projects="TestLibraryStatus.dproj"/>
+    </Target>
+    <Target Name="TestLibraryStatus:Clean">
+        <MSBuild Projects="TestLibraryStatus.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestLibraryStatus:Make">
+        <MSBuild Projects="TestLibraryStatus.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TestDLLFindWindow">
+        <MSBuild Projects="TestDLLFindWindow.dproj"/>
+    </Target>
+    <Target Name="TestDLLFindWindow:Clean">
+        <MSBuild Projects="TestDLLFindWindow.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TestDLLFindWindow:Make">
+        <MSBuild Projects="TestDLLFindWindow.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CallRouter">
+        <MSBuild Projects="CallRouter.dproj"/>
+    </Target>
+    <Target Name="CallRouter:Clean">
+        <MSBuild Projects="CallRouter.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CallRouter:Make">
+        <MSBuild Projects="CallRouter.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="CallRouterTest">
+        <MSBuild Projects="CallRouterTest.dproj"/>
+    </Target>
+    <Target Name="CallRouterTest:Clean">
+        <MSBuild Projects="CallRouterTest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="CallRouterTest:Make">
+        <MSBuild Projects="CallRouterTest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="CallManager;TestRdpServer;TestLibraryStatus;TestDLLFindWindow;CallRouter;CallRouterTest"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="CallManager:Clean;TestRdpServer:Clean;TestLibraryStatus:Clean;TestDLLFindWindow:Clean;CallRouter:Clean;CallRouterTest:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="CallManager:Make;TestRdpServer:Make;TestLibraryStatus:Make;TestDLLFindWindow:Make;CallRouter:Make;CallRouterTest:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+    <ItemGroup Condition="'$(BuildGroup)'=='Complete'">
+        <BuildGroupProject Include="TestLibraryStatus.dproj">
+            <ProjectGuid>{BDC9EE1C-4DCA-4C4D-A0CF-2155C62733AF}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TestDLLFindWindow.dproj">
+            <ProjectGuid>{28A72AC0-3024-4FD4-AE9A-FB25F75912B7}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="TestRdpServer.dproj">
+            <ProjectGuid>{F899DC25-1943-4E9C-97D1-47F9F8B244C8}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CallRouterTest.dproj">
+            <ProjectGuid>{28C27222-A2E2-4A48-ACB3-FEF5DBFD89BD}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CallRouter.dproj">
+            <ProjectGuid>{48147626-5AC3-4D8E-938A-F67823160BA2}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win64</Platforms>
+            <Enabled>False</Enabled>
+        </BuildGroupProject>
+        <BuildGroupProject Include="CallManager.dproj">
+            <ProjectGuid>{423A2F7E-CA72-42B1-A6B8-51CBF4F636AD}</ProjectGuid>
+            <Configurations>Debug</Configurations>
+            <Platforms>Win32;Win64</Platforms>
+            <Enabled>True</Enabled>
+        </BuildGroupProject>
+    </ItemGroup>
+</Project>
